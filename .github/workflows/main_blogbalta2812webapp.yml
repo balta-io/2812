@@ -37,7 +37,6 @@ jobs:
       #     IP_ADDRESS=$(curl https://api.ipify.org)
       #     echo "IP atual: $IP_ADDRESS"
 
-      steps:
     - name: Public IP
       id: ip
       uses: haythem/public-ip@v1.2
