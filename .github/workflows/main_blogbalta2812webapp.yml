@@ -25,10 +25,16 @@ jobs:
           dotnet-version: '6.0.x'
           include-prerelease: true
 
+      - name: Install Azure CLI
+        run: curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
       - name: Get Current IP Address
         run: |
           IP_ADDRESS=$(curl https://api.ipify.org)
           echo $IP_ADDRESS
+
+      - name: Add IP address to SQL Server
+        run: az sql server firewall-rule create --resource-group blog --server blogbalta2012sqlserver --name ghactions --start-ip-address $IP_ADDRESS --end-ip-address $IP_ADDRESS
 
       - name: Install EF Tools
         run: dotnet tool install --global dotnet-ef
