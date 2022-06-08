@@ -41,10 +41,6 @@ jobs:
           echo ${{ steps.ip.outputs.ipv4 }}
           echo ${{ steps.ip.outputs.ipv6 }}
 
-      - name: Print Connection String
-        run: |
-          echo ${{ steps.ip.outputs.ipv4 }}
-
       - name: Add IP address to SQL Server
         run: az sql server firewall-rule create --resource-group blog --server blogbalta2012sqlserver --name ghactions --start-ip-address ${{ steps.ip.outputs.ipv4 }} --end-ip-address ${{ steps.ip.outputs.ipv4 }}
 
