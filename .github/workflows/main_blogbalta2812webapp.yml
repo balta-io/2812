@@ -32,14 +32,9 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: Public IP
+      - name: Get Current IP Address
         id: ip
         uses: haythem/public-ip@v1.2
-
-      - name: Print Public IP
-        run: |
-          echo ${{ steps.ip.outputs.ipv4 }}
-          echo ${{ steps.ip.outputs.ipv6 }}
 
       - name: Add IP address to SQL Server
         run: az sql server firewall-rule create --resource-group blog --server blogbalta2012sqlserver --name ghactions --start-ip-address ${{ steps.ip.outputs.ipv4 }} --end-ip-address ${{ steps.ip.outputs.ipv4 }}
