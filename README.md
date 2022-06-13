@@ -1,6 +1,5 @@
 # Curso **2812 - Fundamentos do Azure, Git, Github e DevOps
-
-Conhecer fundamentos é essencial para qualquer desenvolvedor. Os fundamentos são os conceitos que servem como um alicerce, e permitirão que você aprenda novas tecnologias com mais facilidade, já que os conceitos fundamentais são compartilhados entre tecnologias diferentes.
+Aprenda a versionar e publicar pacotes e aplicações no Azure de forma totalmente automatizada utilizando o GitHub como plataforma.
 
 ## Comandos do Azure
 👉 [Blog](https://balta.io/blog/azure-github-actions)
